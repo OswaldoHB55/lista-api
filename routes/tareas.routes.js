@@ -19,6 +19,7 @@ router.post('/', (req, res)=>{
     res.status(200).json({ message: 'La tarea se guardo exitosamente' });
 });
 
+
 function ObtenerTareas() {
     const contenido = fs.readFileSync(tareasfile,'UTF-8');
     return JSON.parse(contenido);
@@ -71,4 +72,19 @@ router.delete('/:Id', (req, res) => {
 
     res.json({ message: 'Tarea eliminada exitosamente', tarea: tareaEliminada });
 });
+
+//buscar por medio de fecha
+router.post('/lista', (req, res) => {
+    const { fechaHora } = req.body;
+    const tareas = ObtenerTareas();
+    
+    const tareaEncontrada = tareas.find(tarea => tarea.fechaHora === fechaHora);
+    
+    if (tareaEncontrada) {
+        return res.json(tareaEncontrada);
+    } else {
+        return res.status(404).json({ error: "Tarea no encontrada" });
+    }
+});
+   
 export default router;

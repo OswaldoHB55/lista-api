@@ -61,6 +61,7 @@ function ObtenerUsuarios() {
     return JSON.parse(contenido);
 }
 
+
 export default router
 
 // router.get('/', (req, res)=> {
