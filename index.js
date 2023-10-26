@@ -2,8 +2,11 @@ import  express from "express"
 import { config } from "dotenv"
 config();
 
-import tareaRoute from ".routes/tareas.routes.js"
+
 import usuarioRoute from "./routes/usuario.routes.js"
+
+import tareaRoute from "./routes/tareas.routes.js"
+
 const app  = express(); //ejecutando la libreria.
 const PORT = process.env.PORT || 3000;
 app.use(express.json());
