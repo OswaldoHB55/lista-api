@@ -1,18 +1,18 @@
 import fs from "fs"
 import path from "path"
-import { Router } from "express"; //Importar una funcion de la libreria Express
-const router = Router();//ejecutar la funcion Router
+import { Router } from "express"; 
+const router = Router();
 
 //Identificacion de ruta raiz del proyecto 
 const tareasfile = path.join(process.cwd(), "data", "tareas.json");
 
-//Ruta Get para obtener todos los usuarios.
+
 router.get('/', (req, res)=> {
     const tareas = ObtenerTareas();
     res.json(tareas);
 });
 
-//Ruta POST para Guardar nuevas personas
+//Ruta POST para Guardar nuevas tareas
 router.post('/', (req, res)=>{
     const nuevo = req.body;
     GuardarTareas(nuevo);
@@ -29,7 +29,7 @@ function GuardarTareas(pTareas){
     const nuevaTareas = [...contenidoActual, pTareas];
     fs.writeFileSync(tareasfile, JSON.stringify(nuevaTareas,null,2));
 }
-// Ruta PUT para actualizar una persona por su ID
+// Ruta PUT para actualizar una tarea por su ID
 router.put('/:Id', (req, res) => {
     const tareaId = Number(req.params.Id);
     console.table({id: req.params.Id, number: tareaId})
