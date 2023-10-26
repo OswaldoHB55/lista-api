@@ -3,6 +3,7 @@ import fs from 'fs'
 import path from 'path'
 
 const usuariosFile = path.join(process.cwd(), "data", "usuario.json")
+
 const router = Router() 
 
 // Ruta para autenticar un usuario por nombre de usuario y contraseña
@@ -56,7 +57,6 @@ router.post('/create', (req, res) => {
 
 // Función para cargar los datos de usuarios desde Usuario.json
 function ObtenerUsuarios() {
-    const usuariosFile = path.join(process.cwd(), 'data', 'Usuario.json');
     const contenido = fs.readFileSync(usuariosFile, 'UTF-8');
     return JSON.parse(contenido);
 }

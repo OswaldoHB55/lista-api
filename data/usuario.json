@@ -1,10 +1,10 @@
 [
-    {
-        "Id": 1,
-        "nameUser": "test1234",
-        "password": "contraseña_segura",
-        "Nombre": "Carlos",
-        "Apellido": "BlP",
-        "Edad": 22
-      }
+  {
+    "Id": 1,
+    "nameUser": "test1234",
+    "password": "contraseña_segura",
+    "Nombre": "Carlos",
+    "Apellido": "BlP",
+    "Edad": 22
+  }
 ]
