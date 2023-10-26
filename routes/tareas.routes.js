@@ -74,17 +74,17 @@ router.delete('/:Id', (req, res) => {
 });
 
 //buscar por medio de fecha
+
 router.post('/lista', (req, res) => {
     const { fechaHora } = req.body;
     const tareas = ObtenerTareas();
     
-    const tareaEncontrada = tareas.find(tarea => tarea.fechaHora === fechaHora);
+    const tareasEncontradas = tareas.filter(tarea => tarea.fechaHora === fechaHora);
     
-    if (tareaEncontrada) {
-        return res.json(tareaEncontrada);
+    if (tareasEncontradas.length > 0) {
+        return res.json(tareasEncontradas);
     } else {
-        return res.status(404).json({ error: "Tarea no encontrada" });
+        return res.status(404).json({ error: "No se encontraron tareas para la fecha proporcionada" });
     }
 });
-   
 export default router;
