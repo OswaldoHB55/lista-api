@@ -1,9 +1,10 @@
 import  express from "express"
-import {config} from "dotenv"
+import { config } from "dotenv"
+config();
+
 
 import usuarioRoute from "./routes/usuario.routes.js"
 const app  = express(); //ejecutando la libreria.
-dotenv.config();
 const PORT = process.env.PORT || 3000;
 app.use(express.json());
 
