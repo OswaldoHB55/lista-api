@@ -64,16 +64,4 @@ function ObtenerUsuarios() {
 
 export default router
 
-// router.get('/', (req, res)=> {
-//     const usuarios = readFile()
-//     res.json(usuarios);
-// });
-
-
-// function readFile() {
-//     const result = fs.readFileSync(usuariosFile, "utf-8")
-//     const json = JSON.parse(result)
-//     return json
-// }
-
 
