@@ -1,14 +1,12 @@
 [
     {
         "id":1,
-        "IdUsuario":"1",
         "nombre":"Ingles",
         "descripcion":"semana 2 most",
         "fechaHora":"26/10/2023"
     },
     {
         "id":1,
-        "IdUsuario":"1",
         "nombre":"mm",
         "descripcion":"semana 2 most",
         "fechaHora":"26/10/2023"
